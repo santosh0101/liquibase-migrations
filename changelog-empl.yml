@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002
+      author: santo
+      changes:
+        - createTable:
+            tableName: employees
+            ifNotExists: true
+            columns:
+              - column:
+                  name: emp_id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: TEXT
+              - column:
+                  name: department
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: salary
+                  type: DECIMAL(10,2)
+                  constraints:
+                    nullable: false
