@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250328-tag
+      author: k145549
+      changes:
+        - tagDatabase:
+            tag: v1.0

@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-employee-data
+      author: santo
+      changes:
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: first_name
+                  value: Alice
+              - column:
+                  name: last_name
+                  value: Johnson
+              - column:
+                  name: department
+                  value: IT
+              - column:
+                  name: salary
+                  value: 75000.00
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: first_name
+                  value: Bob
+              - column:
+                  name: last_name
+                  value: Williams
+              - column:
+                  name: department
+                  value: HR
+              - column:
+                  name: salary
+                  value: 62000.00
