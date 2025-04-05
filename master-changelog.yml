@@ -3,5 +3,7 @@ databaseChangeLog:
       file: changelogs/00-tag.yml
   - include:
       file: changelogs/01-changelog1.yml
-  - include:
-      file: changelogs/02-changelog2.yml
+
+  # Remove or comment this out if the file doesn't exist
+  # - include:
+  #     file: changelogs/02-changelog2.yml

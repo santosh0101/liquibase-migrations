@@ -1,34 +1,23 @@
 databaseChangeLog:
   - changeSet:
-      id: 002
-      author: santo
+      id: 20250328-create-cryptokeys
+      author: k145549
       changes:
         - createTable:
-            tableName: employees
-            ifNotExists: true
+            tableName: cryptokeys
             columns:
               - column:
-                  name: emp_id
-                  type: INTEGER
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-                    nullable: false
-              - column:
-                  name: first_name
+                  name: key_label
                   type: TEXT
                   constraints:
-                    nullable: false
+                    check: "key_label = LOWER(key_label)"
               - column:
-                  name: last_name
-                  type: TEXT
-              - column:
-                  name: department
+                  name: environment
                   type: TEXT
                   constraints:
-                    nullable: false
+                    check: "environment = LOWER(environment)"
               - column:
-                  name: salary
-                  type: DECIMAL(10,2)
+                  name: platform
+                  type: TEXT
                   constraints:
-                    nullable: false
+                    check: "platform = LOWER(platform)"
