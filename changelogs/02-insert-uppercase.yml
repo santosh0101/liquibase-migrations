@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250405-insert-uppercase
+      author: k145549
+      changes:
+        - insert:
+            tableName: cryptokeys
+            columns:
+              - column:
+                  name: key_label
+                  value: MyKey
+              - column:
+                  name: environment
+                  value: DEV
+              - column:
+                  name: platform
+                  value: AWS

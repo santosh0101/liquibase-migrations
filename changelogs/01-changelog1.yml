@@ -1,23 +1,14 @@
 databaseChangeLog:
   - changeSet:
-      id: 20250328-create-cryptokeys
+      id: 20250405-create-cryptokeys
       author: k145549
       changes:
-        - createTable:
-            tableName: cryptokeys
-            columns:
-              - column:
-                  name: key_label
-                  type: TEXT
-                  constraints:
-                    check: "key_label = LOWER(key_label)"
-              - column:
-                  name: environment
-                  type: TEXT
-                  constraints:
-                    check: "environment = LOWER(environment)"
-              - column:
-                  name: platform
-                  type: TEXT
-                  constraints:
-                    check: "platform = LOWER(platform)"
+        - sql:
+            splitStatements: false
+            stripComments: true
+            sql: |
+              CREATE TABLE cryptokeys (
+                key_label TEXT NOT NULL CHECK (key_label = LOWER(key_label)),
+                environment TEXT NOT NULL CHECK (environment = LOWER(environment)),
+                platform TEXT NOT NULL CHECK (platform = LOWER(platform))
+              );

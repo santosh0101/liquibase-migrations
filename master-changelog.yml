@@ -1,9 +1,12 @@
 databaseChangeLog:
   - include:
       file: changelogs/00-tag.yml
+
   - include:
       file: changelogs/01-changelog1.yml
 
-  # Remove or comment this out if the file doesn't exist
-  # - include:
-  #     file: changelogs/02-changelog2.yml
+  - include:
+      file: changelogs/02-insert-uppercase.yml
+
+  - include:
+      file: changelogs/03-update-to-lowercase.yml
